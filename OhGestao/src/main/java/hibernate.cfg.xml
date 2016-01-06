@@ -8,7 +8,7 @@
 		<property name="show_sql">true</property>
 		<property name="hbm2ddl.auto">update</property>
 		
-		<!--  Teste mapping class="br.com.ohexpress.model.Usuario" />-->
+		<!--  mapping class="br.com.ohexpress.model.Usuario" />-->
 		
 		
 

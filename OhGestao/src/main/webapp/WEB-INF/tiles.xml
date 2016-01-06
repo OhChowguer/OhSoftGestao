@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="lay_principal" template="/WEB-INF/views/layout/lay_principal.jsp">
+		<put-attribute name="title" value="Soft Gestão" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/layout/header_principal.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/layout/menu_principal.jsp" />
+		<put-attribute name="chat"
+			value="/WEB-INF/views/layout/chat_principal.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp" />
+	</definition>
+	<definition name="home" extends="lay_principal">
+
+		<put-attribute name="title" value="Soft Gestão" />
+		<put-attribute name="body" value="/WEB-INF/views/index.jsp" />
+	</definition>
+
+</tiles-definitions>  

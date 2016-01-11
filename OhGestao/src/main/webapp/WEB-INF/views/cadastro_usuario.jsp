@@ -26,7 +26,7 @@
 	<!-- Page Header -->
 	<div class="page-header position-relative">
 		<div class="header-title">
-			<h1>Cadastro de Usuario eduardo 2</h1>
+			<h1>Cadastro de Usuario eduardo</h1>
 		</div>
 		<!--Header Buttons-->
 		<div class="header-buttons">

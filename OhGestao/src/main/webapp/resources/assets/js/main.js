@@ -6,7 +6,7 @@ function delUsuario(id) {
 		$.post("/ohgestao/usuario/deletar/" + id, {
 
 		}, function(result) {
-			
+		
 
 			if (result == "ok") {
 				alert("Usuario deletado")

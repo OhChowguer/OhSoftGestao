@@ -50,7 +50,7 @@
 						<div class="widget flat radius-bordered">
 							<div class="widget-header bg-blue">
 								<span class="widget-caption">Formulario de cadastro de
-									usuarios</span>
+									usuarios eduardo</span>
 							</div>
 							<div class="widget-body">
 								<div id="registration-form">

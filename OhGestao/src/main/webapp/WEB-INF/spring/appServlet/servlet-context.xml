@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns:mvc="http://www.springframework.org/schema/mvc"
+<beans  xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/beans    	http://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.springframework.org/schema/data/jpa
+    	http://www.springframework.org/schema/data/jpa/spring-jpa.xsd"
+		
+		>
 
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing 
@@ -23,7 +27,7 @@
 		<bean class="br.com.ohgestao.controller.AutorizadorInterceptor" />
 	</mvc:interceptors>
 
-
+	
 	<!-- OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
@@ -50,10 +54,16 @@
 			</list>
 		</property>
 	</bean>
-
+		
 
 	<!-- OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
 	<context:component-scan base-package="br.com.ohgestao" />
+
+	<bean id="UsuarioDaoImp" class="br.com.ohsoftwarescore.dao.UsuarioDaoImp" />
+	<bean id="Usuario" class="br.com.ohsoftwarescore.model.Usuario" />
+
+	
+	
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -64,8 +74,10 @@
 
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="packagesToScan" value="br.com.ohsoftwarescore" />
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:hibernate.cfg.xml" />
+		<property name="mappingJarLocations" value="WEB-INF/lib/ohsoftwarescore.jar"/>
 	</bean>
 
 	<tx:annotation-driven />

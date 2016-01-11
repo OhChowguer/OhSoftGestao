@@ -58,10 +58,12 @@
 
 <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
 <script
-	src="${pageContext.request.contextPath}/resources/assets/js/skins.min.js"></script>
+	src="${pageContext.request.contextPath}/resources/assets/js/skins.js"></script>
 </head>
+
 <!-- Body -->
 <body>
+<c:url var="setMenu" value="teste" />
 	<!-- Loading Container -->
 	<div class="loading-container">
 		<div class="loader"></div>
@@ -69,14 +71,16 @@
 	<!--  /Loading Container -->
 
 	<tiles:insertAttribute name="header" />
-
+	
 	<!-- Main Container -->
 	<div class="main-container container-fluid">
 		<!-- Page Container -->
 		<div class="page-container">
-
+			
 			<tiles:insertAttribute name="menu" />
+			
 			<tiles:insertAttribute name="chat" />
+			
 			<tiles:insertAttribute name="body" />
 
 		</div>
@@ -84,6 +88,12 @@
 		<!-- Main Container -->
 
 	</div>
+	
+		<!--Meus JS-->
+	<script
+		src="${pageContext.request.contextPath}/resources/assets/js/main.js"></script>
+	
+	
 
 	<!--Basic Scripts-->
 	<script

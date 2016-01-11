@@ -1,7 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@page contentType="text/html; charset=UTF-8" language="java"
+	import="java.sql.*" errorPage=""%>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
+<c:url var="setMenu" value="active" />
 
 <!-- Page Sidebar -->
 <div class="page-sidebar" id="sidebar">
@@ -9,27 +11,46 @@
 	<div class="sidebar-header-wrapper">
 		<input type="text" class="searchinput" /> <i
 			class="searchicon fa fa-search"></i>
-		<div class="searchhelper">Busca r·pida, RelatÛrios, E-mails ou
-			NotificaÁ„es</div>
+		<div class="searchhelper">Busca r√°pida, Relat√≥rios, E-mails ou
+			Notifica√ß√£es</div>
 	</div>
 	<!-- /Page Sidebar Header -->
 	<!-- Sidebar Menu -->
 	<ul class="nav sidebar-menu">
 		<!--Inicio-->
-		<li class="active"><a href="/ohgestao/"> <i
+		<li class=""><a href="/ohgestao/"> <i
 				class="menu-icon glyphicon glyphicon-home"></i> <span
 				class="menu-text">Incio</span>
 		</a></li>
 		<!--Cadastros-->
-		<li><a href="#"> <i class="menu-icon fa fa-th"></i>
-				<span class="menu-text"> Cadastros </span>
-		</a></li>
-		<!--RelatÛrios-->
-		<li><a href="#"> <i
-				class="menu-icon glyphicon glyphicon-tasks"></i> <span
-				class="menu-text">Relatorios </span>
-		</a></li>
+		<li class="<tiles:insertAttribute name="menu_cad_drop" />"><a
+			href="#" class="menu-dropdown"> <i
+				class="menu-icon fa fa-pencil-square-o"></i> <span class="menu-text">
+					Cadastros </span> <i class="menu-expand"></i>
+		</a>
+			<ul class="submenu">
+				<li class="<tiles:insertAttribute name="menu_cad_usu" />"><a
+					href="/ohgestao/usuario/cadastro"> <i
+						class="menu-icon fa fa-pencil-square-o"></i> <span
+						class="menu-text">Usuarios</span>
+				</a></li>
 
+			</ul></li>
+
+		<!--Relat√≥rios-->
+		<li class="<tiles:insertAttribute name="menu_rel_drop" />"><a
+			href="#" class="menu-dropdown"> <i
+				class="menu-icon glyphicon glyphicon-stats"></i> <span class="menu-text">
+					Relatorios </span> <i class="menu-expand"></i>
+		</a>
+			<ul class="submenu">
+				<li class="<tiles:insertAttribute name="menu_rel_usu" />"><a
+					href="/ohgestao/usuario/listar"> <i
+						class="menu-icon fa fa-pencil-square-o"></i> <span
+						class="menu-text">Lista de Usuarios</span>
+				</a></li>
+
+			</ul></li>
 		<!--UI Elements
 		<li><a href="#" class="menu-dropdown"> <i
 				class="menu-icon fa fa-desktop"></i> <span class="menu-text">

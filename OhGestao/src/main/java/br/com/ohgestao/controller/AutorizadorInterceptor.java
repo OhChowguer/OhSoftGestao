@@ -14,11 +14,11 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 		String uri = request.getRequestURI();
 		
 			
-		if (uri.endsWith("/admin") || uri.endsWith("/log")
+		if (uri.endsWith("/cadastrousuario") || uri.endsWith("/log")
 				|| uri.endsWith("/admin/lojas/listDist")
 				|| uri.endsWith("/produto/listaProdApp/1")
 				|| uri.endsWith("/admin/lojas/json")
-				|| uri.contains("resources") || uri.endsWith("/registro")
+				|| uri.contains("/cadastros") || uri.endsWith("/registro")
 				|| uri.endsWith("/registrar") || uri.endsWith("/login")
 				|| uri.endsWith("/logincliente")
 				|| uri.endsWith("/pesqloja")
@@ -27,7 +27,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 			return true;
 			
 		}
-		return false; 
+		return true; 
 
 	}
 }

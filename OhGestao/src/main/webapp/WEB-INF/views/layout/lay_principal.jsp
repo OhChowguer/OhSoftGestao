@@ -132,8 +132,151 @@
 		src="${pageContext.request.contextPath}/resources/assets/js/charts/flot/jquery.flot.tooltip.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/resources/assets/js/charts/flot/jquery.flot.orderBars.js"></script>
+ 	<!--Page Related Scripts-->
+    <script src="${pageContext.request.contextPath}/resources/assets/js/validation/bootstrapValidator.js"></script>
 
+    <script>
+        $(document).ready(function () {
+
+            $("#registrationForm").bootstrapValidator();
+
+            $('#togglingForm').bootstrapValidator({
+                message: 'This value is not valid',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                submitHandler: function (validator, form, submitButton) {
+                    // Do nothing
+                },
+                fields: {
+                    firstName: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The first name is required'
+                            }
+                        }
+                    },
+                    lastName: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The last name is required'
+                            }
+                        }
+                    },
+                    company: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The company name is required'
+                            }
+                        }
+                    },
+                    // These fields will be validated when being visible
+                    job: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The job title is required'
+                            }
+                        }
+                    },
+                    department: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The department name is required'
+                            }
+                        }
+                    },
+                    mobilePhone: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The mobile phone number is required'
+                            },
+                            digits: {
+                                message: 'The mobile phone number is not valid'
+                            }
+                        }
+                    },
+                    // These fields will be validated when being visible
+                    homePhone: {
+                        validators: {
+                            digits: {
+                                message: 'The home phone number is not valid'
+                            }
+                        }
+                    },
+                    officePhone: {
+                        validators: {
+                            digits: {
+                                message: 'The office phone number is not valid'
+                            }
+                        }
+                    }
+                }
+            })
+            .find('button[data-toggle]')
+            .on('click', function () {
+                var $target = $($(this).attr('data-toggle'));
+                // Show or hide the additional fields
+                // They will or will not be validated based on their visibilities
+                $target.toggle();
+                if (!$target.is(':visible')) {
+                    // Enable the submit buttons in case additional fields are not valid
+                    $('#togglingForm').data('bootstrapValidator').disableSubmitButtons(false);
+                }
+            });
+
+
+            $('#accountForm').bootstrapValidator({
+                // Only disabled elements are excluded
+                // The invisible elements belonging to inactive tabs must be validated
+                excluded: [':disabled'],
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                submitHandler: function (validator, form, submitButton) {
+                    // Do nothing
+                },
+                fields: {
+                    fullName: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The full name is required'
+                            }
+                        }
+                    },
+                    company: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The company name is required'
+                            }
+                        }
+                    },
+                    address: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The address is required'
+                            }
+                        }
+                    },
+                    city: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The city is required'
+                            }
+                        }
+                    }
+                }
+            });
+
+            $('#html5Form').bootstrapValidator();
+        });
+    </script>
 	<script>
+	
+	
 		// If you want to draw your charts with Theme colors you must run initiating charts after that current skin is loaded
 		$(window)
 				.bind(

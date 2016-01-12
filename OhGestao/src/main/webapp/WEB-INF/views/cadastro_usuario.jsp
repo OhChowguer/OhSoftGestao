@@ -26,7 +26,7 @@
 	<!-- Page Header -->
 	<div class="page-header position-relative">
 		<div class="header-title">
-			<h1>Cadastro de Usuario eduardo</h1>
+			<h1>Cadastro de Usuario</h1>
 		</div>
 		<!--Header Buttons-->
 		<div class="header-buttons">
@@ -50,40 +50,60 @@
 						<div class="widget flat radius-bordered">
 							<div class="widget-header bg-blue">
 								<span class="widget-caption">Formulario de cadastro de
-									usuarios eduardo</span>
+									usuarios</span>
 							</div>
 							<div class="widget-body">
 								<div id="registration-form">
-									<form:form role="form" action="${url}" method="POST"
+									<form:form id="registrationForm"
+										data-bv-message="This value is not valid"
+										data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+										data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+										data-bv-feedbackicons-validating="glyphicon glyphicon-refresh"
+										role="form" action="${url}" method="POST"
 										modelAttribute="usuario">
 
-										<div class="form-title">Informações do Usuario</div>
+										<div class="form-title">Informaçõess do Usuario</div>
 										<div class="form-group">
 											<span class="input-icon icon-right"> <form:input
+													data-bv-notempty="true"
+													data-bv-notempty-message="Esse campo não pode estar vazio!"
 													type="text" class="form-control" id="userameInput"
-													placeholder="Nome de Usuario" required="" path="login" />
-												<i class="glyphicon glyphicon-user circular"></i>
+													name="userameInput" placeholder="Nome de Usuario"
+													required="" path="login" /> <!--i class="glyphicon glyphicon-user circular"></i-->
 											</span>
 										</div>
 										<div class="form-group">
 											<span class="input-icon icon-right"> <form:input
-													type="text" class="form-control" id="emailInput"
-													placeholder="E-mail" required="" path="email" /> <i
-												class="fa fa-envelope-o circular"></i>
+													data-bv-emailaddress="true"
+													data-bv-emailaddress-message="Insira um e-mail válido"
+													data-bv-notempty="true"
+													data-bv-notempty-message="Esse campo não pode estar vazio!"
+													type="text" class="form-control" placeholder="E-mail"
+													required="" path="email" />
+
 											</span>
 										</div>
 										<div class="form-group">
 											<span class="input-icon icon-right"> <form:input
-													type="text" class="form-control" id="passwordInput"
-													placeholder="Senha" required="" path="senha" /> <i
-												class="fa fa-lock circular"></i>
+													type="password" class="form-control" name="password"
+													placeholder="Senha" required="" path="senha"
+													data-bv-notempty="true"
+													data-bv-notempty-message="A senha não pode ser vazia"
+													data-bv-different="true"
+													data-bv-different-field="userameInput"
+													data-bv-different-message="A senha não pode ser a mesma do usuario" />
+												<!--<i class="fa fa-lock circular"></i>-->
 											</span>
 										</div>
 										<div class="form-group">
 											<span class="input-icon icon-right"> <input
-												type="text" class="form-control" id="confirmPasswordInput"
-												placeholder="Confirmar senha"> <i
-												class="fa fa-lock circular"></i>
+												name="confirmPassword" type="password" class="form-control"
+												placeholder="Confirmar senha" 
+												
+												data-bv-identical="true" 
+												data-bv-identical-field="password"
+												data-bv-identical-message="The password and its confirm are not the same" />
+												<!--<i class="fa fa-lock circular"></i>-->
 											</span>
 										</div>
 										<div class="form-title">Informações Pessoais</div>

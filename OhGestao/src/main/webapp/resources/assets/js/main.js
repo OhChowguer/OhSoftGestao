@@ -19,6 +19,7 @@ function delUsuario(id) {
 		});
 	} else {
 	    txt = "Cancelado";
+	    alert(txt)
 	}
 	
 

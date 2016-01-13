@@ -52,7 +52,7 @@ public class UsuarioController {
 
 		daoUsuario.salvar(usuario);
 
-		return "redirect:/login";
+		return "login";
 	}
 
 	@RequestMapping(value = "/listar", method = RequestMethod.GET)

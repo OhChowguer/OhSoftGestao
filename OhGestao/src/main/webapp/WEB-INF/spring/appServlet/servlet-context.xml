@@ -70,7 +70,7 @@
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/ohgestao" />
 		<property name="username" value="root" />
-		<property name="password" value="chowman" />
+		<property name="password" value="ohpass123" />
 	</bean>
 
 	<bean id="sessionFactory"

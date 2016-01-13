@@ -5,29 +5,31 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 
+
+
 public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 
 	@Override
-	public boolean preHandle(HttpServletRequest request,
-			HttpServletResponse response, Object controller) throws Exception {
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object controller)
+			throws Exception {
 
 		String uri = request.getRequestURI();
+
+		//Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");
 		
-			
-		if (uri.endsWith("/cadastrousuario") || uri.endsWith("/log")
-				|| uri.endsWith("/admin/lojas/listDist")
-				|| uri.endsWith("/produto/listaProdApp/1")
-				|| uri.endsWith("/admin/lojas/json")
-				|| uri.contains("/cadastros") || uri.endsWith("/registro")
-				|| uri.endsWith("/registrar") || uri.endsWith("/login")
-				|| uri.endsWith("/logincliente")
-				|| uri.endsWith("/pesqloja")
-				|| uri.endsWith("/ohgestao/") || uri.contains("lojas") || uri.contains("/imageDisplay")) {
+		if (request.getSession().getAttribute("usuarioLogado") != null) {
 
 			return true;
-			
 		}
-		return true; 
+
+		if ( uri.endsWith("/login") || uri.endsWith("/registro") || uri.contains("resources")) {
+
+			return true;
+
+		}
+		
+		response.sendRedirect("/ohgestao/usuario/login");
+		return true;
 
 	}
 }

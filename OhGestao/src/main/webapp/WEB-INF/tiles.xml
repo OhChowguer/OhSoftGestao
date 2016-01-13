@@ -11,15 +11,19 @@
 		<put-attribute name="chat"
 			value="/WEB-INF/views/layout/chat_principal.jsp" />
 		<put-attribute name="body" value="" />
-		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp" />
 		<put-attribute name="menu_cad_drop" value="" cascade="true" />
 		<put-attribute name="menu_cad_usu" value="" cascade="true" />
 		<put-attribute name="menu_rel_drop" value="" cascade="true" />
 		<put-attribute name="menu_rel_usu" value="" cascade="true" />
-
 	</definition>
-	<definition name="home" extends="lay_principal">
+	<definition name="lay_clean" template="/WEB-INF/views/layout/lay_clean.jsp">
+		<put-attribute name="title" value="Soft Gestão" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/layout/header_clean.jsp" />
+		<put-attribute name="body" value="" />
+	</definition>
 
+	<definition name="home" extends="lay_principal">
 		<put-attribute name="title" value="Soft Gestão" />
 		<put-attribute name="body" value="/WEB-INF/views/index.jsp" />
 	</definition>
@@ -29,18 +33,23 @@
 			value="/WEB-INF/views/cadastro_usuario.jsp" />
 		<put-attribute name="menu_cad_drop" value="active open"
 			cascade="true" />
-		<put-attribute name="menu_cad_usu" value="active" cascade="true" />
-
+		<put-attribute name="menu_cad_usu" value="active"
+			cascade="true" />
 	</definition>
-
-
 	<definition name="listUsuario" extends="lay_principal">
 		<put-attribute name="title" value="Soft Gestão - Lista de usuarios" />
-		<put-attribute name="body"
-			value="/WEB-INF/views/lista_usuario.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/lista_usuario.jsp" />
 		<put-attribute name="menu_rel_drop" value="active open"
 			cascade="true" />
-		<put-attribute name="menu_rel_usu" value="active" cascade="true" />
-
+		<put-attribute name="menu_rel_usu" value="active"
+			cascade="true" />
+	</definition>
+	<definition name="login" extends="lay_clean">
+		<put-attribute name="title" value="Soft Gestão - Entrar" />
+		<put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+	</definition>
+	<definition name="registro" extends="lay_clean">
+		<put-attribute name="title" value="Soft Gestão - Registrar" />
+		<put-attribute name="body" value="/WEB-INF/views/registro.jsp" />
 	</definition>
 </tiles-definitions>  

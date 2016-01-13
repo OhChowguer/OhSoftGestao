@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@page contentType="text/html; charset=UTF-8" language="java"
+	import="java.sql.*" errorPage=""%>
 
 
 <!-- Chat Bar -->
@@ -8,7 +8,7 @@
 		<div class="contacts-search">
 			<input type="text" class="searchinput" placeholder="Busca de contatos" />
 			<i class="searchicon fa fa-search"></i>
-			<div class="searchhelper">Busca r·pida, Conversas ou Contatos</div>
+			<div class="searchhelper">Busca r√°pida, Conversas ou Contatos</div>
 		</div>
 		<ul class="contacts-list">
 			<li class="contact">
@@ -17,7 +17,7 @@
 						src="${pageContext.request.contextPath}/resources/assets/img/logo.png" />
 				</div>
 				<div class="contact-info">
-					<div class="contact-name">Em construÁ„o</div>
+					<div class="contact-name">Em constru√ß√£o</div>
 					<div class="contact-status">
 						<div class="offline"></div>
 						<div class="status">offline</div>
@@ -35,7 +35,7 @@
 					src="${pageContext.request.contextPath}/resources/assets/img/logo_5.png" />
 			</div>
 			<div class="contact-info">
-				<div class="contact-name">Em construÁ„o</div>
+				<div class="contact-name">Em constru√ß√£o</div>
 				<div class="contact-status">
 					<div class="offline"></div>
 					<div class="status">offline</div>
@@ -53,7 +53,7 @@
 					<div class="contact-name">Meu</div>
 					<div class="message-time">10:14 AM, Hoje</div>
 				</div>
-				<div class="message-body">EM CONSTRU«√O</div>
+				<div class="message-body">EM CONSTRU√á√ÉO</div>
 			</li>
 			
 		</ul>

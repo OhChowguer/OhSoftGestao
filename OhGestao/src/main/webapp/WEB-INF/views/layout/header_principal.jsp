@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@page contentType="text/html; charset=UTF-8" language="java"
+	import="java.sql.*" errorPage=""%>
 
 
 <!-- Navbar -->
@@ -35,7 +35,7 @@
 												<i class="fa fa-phone bg-themeprimary white"></i>
 											</div>
 											<div class="notification-body">
-												<span class="title">Funcao de notificacoes em construcao</span> <span
+												<span class="title">Funcão de notificações em construção</span> <span
 													class="description">00:00 pm</span>
 											</div>
 											<div class="notification-extra">
@@ -94,14 +94,14 @@
 								</div>
 								<section>
 									<h2>
-										<span class="profile"><span>Administrador</span></span>
+										<span class="profile"><span>Configurações da conta</span></span>
 									</h2>
 								</section>
 						</a> <!--Login Area Dropdown-->
 							<ul
 								class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
-								<li class="username"><a>Administrador</a></li>
-								<li class="email"><a>adm@ohsoft.com.br</a></li>
+								<li class="username"><a>${sessionScope.usuarioLogado.login}</a></li>
+								<li class="email"><a>${sessionScope.usuarioLogado.email}</a></li>
 								<!--Avatar Area-->
 								<li>
 									<div class="avatar-area">
@@ -156,7 +156,7 @@
 									</ul>
 								</li>
 								<!--/Theme Selector Area-->
-								<li class="dropdown-footer"><a href="login.html"> Sair </a></li>
+								<li class="dropdown-footer"><a href="${pageContext.request.contextPath}/usuario/sair"> Sair </a></li>
 							</ul> <!--/Login Area Dropdown--></li>
 						<!-- /Account Area -->
 						<!--Note: notice that setting div must start right after account area list.

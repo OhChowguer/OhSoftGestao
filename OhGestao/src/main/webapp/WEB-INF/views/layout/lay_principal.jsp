@@ -70,13 +70,13 @@
 	</div>
 	<!--  /Loading Container -->
 
-	<tiles:insertAttribute name="header" />
 	
 	<!-- Main Container -->
 	<div class="main-container container-fluid">
+	<tiles:insertAttribute name="header" />	
 		<!-- Page Container -->
 		<div class="page-container">
-			
+		
 			<tiles:insertAttribute name="menu" />
 			
 			<tiles:insertAttribute name="chat" />

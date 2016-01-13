@@ -5,8 +5,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:url var="url" value="/usuario/logar" />
-
-
 <div class="login-container animated fadeInDown">
 	<div class="loginbox bg-white">
 		<div class="loginbox-title">Entrar</div>
